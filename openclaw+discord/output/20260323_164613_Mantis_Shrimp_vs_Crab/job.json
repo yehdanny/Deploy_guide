@@ -1,0 +1,45 @@
+{
+  "topic": {
+    "species_a": "Mantis Shrimp",
+    "species_b": "Crab",
+    "environment": "Coral reef",
+    "zh_a": "螳螂蝦",
+    "zh_b": "螃蟹"
+  },
+  "prompts": [
+    "Cinematic wildlife footage, Coral reef, a Mantis Shrimp and a Crab face each other in tense standoff, dramatic natural lighting, photorealistic, 4K quality, National Geographic style, slight camera movement, dust particles in air, vertical 9:16 format"
+  ],
+  "metadata": {
+    "title": "螳螂蝦 vs 螃蟹！誰才是Coral reef的王者？ | Mantis Shrimp vs Crab #shorts",
+    "description": "🔥 螳螂蝦 vs 螃蟹 — 自然界的終極對決！\n在Coral reef中，這兩個物種展開了一場驚心動魄的鬥爭。\n誰會勝出？看到最後！\n\n🔥 Mantis Shrimp vs Crab — Ultimate showdown in the wild!\nWatch this epic battle in the Coral reef.\n\n#shorts #wildlife #animal #nature #vs #fight #MantisShrimp #Crab #動物 #野生動物 #自然 #螳螂蝦 #螃蟹",
+    "tags": [
+      "Mantis Shrimp",
+      "Crab",
+      "wildlife",
+      "nature",
+      "vs",
+      "animal fight",
+      "shorts",
+      "螳螂蝦",
+      "螃蟹",
+      "動物",
+      "野生動物",
+      "自然",
+      "對決"
+    ]
+  },
+  "created_at": "2026-03-23T16:46:13.723611",
+  "status": "uploaded",
+  "error": "429 Client Error: Too Many Requests for url: https://api.klingai.com/v1/videos/text2video",
+  "all_prompts": [
+    "Cinematic wildlife footage, Coral reef, a Mantis Shrimp and a Crab face each other in tense standoff, dramatic natural lighting, photorealistic, 4K quality, National Geographic style, slight camera movement, dust particles in air, vertical 9:16 format",
+    "Cinematic wildlife footage, Coral reef, intense battle between a Mantis Shrimp and a Crab, dynamic action shot, motion blur on fast movements, photorealistic, 4K quality, dramatic angle, dust and debris, National Geographic style, vertical 9:16 format",
+    "Cinematic wildlife footage, Coral reef, aftermath of battle between Mantis Shrimp and Crab, the victor stands dominant, golden hour lighting, photorealistic, 4K quality, epic wide shot transitioning to close-up, National Geographic style, vertical 9:16 format"
+  ],
+  "video_file": "C:\\Users\\ygz08\\.openclaw\\workspace\\animal-shorts\\output\\20260323_164613_Mantis_Shrimp_vs_Crab\\segment_1.mp4",
+  "segment_files": [
+    "C:\\Users\\ygz08\\.openclaw\\workspace\\animal-shorts\\output\\20260323_164613_Mantis_Shrimp_vs_Crab\\segment_1.mp4"
+  ],
+  "youtube_video_id": "W-xsE5YBGJs",
+  "youtube_url": "https://youtube.com/shorts/W-xsE5YBGJs"
+}
