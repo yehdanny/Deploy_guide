@@ -8,11 +8,4 @@ wheels/
 
 # Virtual environments
 .venv
-
-# DID
-F5_TTS_main/
-tts/
-models/
-
-#daniel77
-_GB-10spark/
+site-packages/
