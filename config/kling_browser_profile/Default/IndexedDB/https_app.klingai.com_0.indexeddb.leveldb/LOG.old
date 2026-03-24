@@ -1,0 +1,25 @@
+2026/03/24-13:46:05.591 12774 Reusing MANIFEST C:\Users\ygz08\.openclaw\workspace\animal-shorts\config\kling_browser_profile\Default\IndexedDB\https_app.klingai.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/24-13:46:05.591 12774 Recovering log #27
+2026/03/24-13:46:05.592 12774 Reusing old log C:\Users\ygz08\.openclaw\workspace\animal-shorts\config\kling_browser_profile\Default\IndexedDB\https_app.klingai.com_0.indexeddb.leveldb/000027.log 
+2026/03/24-13:46:05.592 12774 Delete type=2 #26
+2026/03/24-13:46:05.595 17e84 Level-0 table #32: started
+2026/03/24-13:46:05.597 17e84 Level-0 table #32: 9568 bytes OK
+2026/03/24-13:46:05.597 17e84 Delete type=0 #27
+2026/03/24-13:46:05.598 18b60 Manual compaction at level-0 from '\x00\x10\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at '\x00\x10\x00\x00\x05' @ 1120 : 1
+2026/03/24-13:46:05.598 18b60 Compacting 1@0 + 1@1 files
+2026/03/24-13:46:05.601 18b60 Generated table #33@0: 415 keys, 18611 bytes
+2026/03/24-13:46:05.601 18b60 Compacted 1@0 + 1@1 files => 18611 bytes
+2026/03/24-13:46:05.601 18b60 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/24-13:46:05.603 18b60 Delete type=2 #32
+2026/03/24-13:46:05.603 18b60 Manual compaction at level-0 from '\x00\x10\x00\x00\x05' @ 1120 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/03/24-13:46:07.404 d9f4 Level-0 table #35: started
+2026/03/24-13:46:07.411 d9f4 Level-0 table #35: 508 bytes OK
+2026/03/24-13:46:07.411 d9f4 Delete type=2 #29
+2026/03/24-13:46:07.411 d9f4 Delete type=0 #31
+2026/03/24-13:46:07.412 18b60 Manual compaction at level-0 from '\x00\x11\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at '\x00\x11\x00\x00\x05' @ 1139 : 1
+2026/03/24-13:46:07.412 18b60 Compacting 1@0 + 1@1 files
+2026/03/24-13:46:07.414 18b60 Generated table #36@0: 415 keys, 18611 bytes
+2026/03/24-13:46:07.414 18b60 Compacted 1@0 + 1@1 files => 18611 bytes
+2026/03/24-13:46:07.414 18b60 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/24-13:46:07.415 18b60 Delete type=2 #35
+2026/03/24-13:46:07.416 18b60 Manual compaction at level-0 from '\x00\x11\x00\x00\x05' @ 1139 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at (end)

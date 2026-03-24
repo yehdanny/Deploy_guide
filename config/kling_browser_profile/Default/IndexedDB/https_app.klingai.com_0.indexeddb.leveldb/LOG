@@ -1,0 +1,25 @@
+2026/03/24-13:47:48.937 1226c Reusing MANIFEST C:\Users\ygz08\.openclaw\workspace\animal-shorts\config\kling_browser_profile\Default\IndexedDB\https_app.klingai.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/24-13:47:48.938 1226c Recovering log #34
+2026/03/24-13:47:48.938 1226c Reusing old log C:\Users\ygz08\.openclaw\workspace\animal-shorts\config\kling_browser_profile\Default\IndexedDB\https_app.klingai.com_0.indexeddb.leveldb/000034.log 
+2026/03/24-13:47:48.938 1226c Delete type=2 #33
+2026/03/24-13:47:48.943 37a4 Level-0 table #39: started
+2026/03/24-13:47:48.945 37a4 Level-0 table #39: 9514 bytes OK
+2026/03/24-13:47:48.946 37a4 Delete type=0 #34
+2026/03/24-13:47:48.947 1e1cc Manual compaction at level-0 from '\x00\x12\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at '\x00\x12\x00\x00\x05' @ 1182 : 1
+2026/03/24-13:47:48.947 1e1cc Compacting 1@0 + 1@1 files
+2026/03/24-13:47:48.949 1e1cc Generated table #40@0: 415 keys, 18612 bytes
+2026/03/24-13:47:48.949 1e1cc Compacted 1@0 + 1@1 files => 18612 bytes
+2026/03/24-13:47:48.949 1e1cc compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/24-13:47:48.950 1e1cc Delete type=2 #39
+2026/03/24-13:47:48.950 1e1cc Manual compaction at level-0 from '\x00\x12\x00\x00\x05' @ 1182 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/03/24-13:47:51.008 37a4 Level-0 table #42: started
+2026/03/24-13:47:51.022 37a4 Level-0 table #42: 510 bytes OK
+2026/03/24-13:47:51.023 37a4 Delete type=2 #36
+2026/03/24-13:47:51.023 37a4 Delete type=0 #38
+2026/03/24-13:47:51.024 37a4 Manual compaction at level-0 from '\x00\x13\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at '\x00\x13\x00\x00\x05' @ 1201 : 1
+2026/03/24-13:47:51.024 37a4 Compacting 1@0 + 1@1 files
+2026/03/24-13:47:51.028 37a4 Generated table #43@0: 415 keys, 18612 bytes
+2026/03/24-13:47:51.028 37a4 Compacted 1@0 + 1@1 files => 18612 bytes
+2026/03/24-13:47:51.028 37a4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/24-13:47:51.029 37a4 Delete type=2 #42
+2026/03/24-13:47:51.029 1e1cc Manual compaction at level-0 from '\x00\x13\x00\x00\x05' @ 1201 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at (end)
