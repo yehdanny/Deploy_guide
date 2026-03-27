@@ -1,0 +1,29 @@
+# CNBC Scraper
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# NotebookLM Browser Automation
+playwright>=1.40.0
+
+# Audio Processing
+pydub>=0.25.1
+numpy>=1.24.0
+
+# SadTalker dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+# SadTalker will be cloned separately
+
+# Thumbnail Generation
+Pillow>=10.0.0
+
+# YouTube Upload
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# Utilities
+python-dotenv>=1.0.0
+ffmpeg-python>=0.2.0
