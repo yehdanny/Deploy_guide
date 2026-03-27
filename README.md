@@ -10,7 +10,7 @@
 4. **SadTalker** — 生成 talking head 影片
 5. **FFmpeg 合成** — 主講者切換 + PIP 佈局
 6. **Thumbnail** — 模板 + 日期/主題
-7. **YouTube 上傳** — Data API v3
+7. **YouTube 上傳** — Data API v3!
 
 ## 設置
 
