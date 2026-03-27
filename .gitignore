@@ -1,0 +1,11 @@
+.venv/
+output/
+__pycache__/
+*.pyc
+
+cookies/
+client_secrets.json
+youtube_token.json
+SadTalker/
+.env
+
