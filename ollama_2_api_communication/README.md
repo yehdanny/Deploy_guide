@@ -1,4 +1,8 @@
-# Ollama API Communication
+# 我的AI技能 - API Communication 篇
+
+---
+
+## Ollama API Communication
 
 一個基於 Ollama `/api/chat` 接口的輕量級對話系統，採用三層架構設計，符合 **Stateless API** 與 **Separation of Concerns** 原則，方便未來擴充為多使用者 Web 服務。
 

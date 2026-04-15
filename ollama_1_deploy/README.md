@@ -1,4 +1,6 @@
-# place1
+# 我的AI技能 - deploy ollama 篇
+
+---
 
 透過 Ollama 本地 API 進行串流推理的簡易 Python 腳本。
 
