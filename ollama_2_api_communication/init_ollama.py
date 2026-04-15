@@ -34,7 +34,7 @@ class OllamaProvider:
             response = requests.post(self.url, json=payload)
             response.raise_for_status() 
             result = response.json()
-            print(f"[debug] {__filename__} : {result}")
+            #print(f"[debug] {__filename__} : {result}")
             return result.get("message", {}).get("content", "")
         except requests.exceptions.RequestException as e:
             return f"[failed] {__filename__} : {str(e)}"
