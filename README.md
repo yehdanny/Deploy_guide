@@ -6,9 +6,9 @@
 
 | 資料夾 | 說明 |
 |--------|------|
-| [`ollama_deploy`](./ollama_deploy) | 最小化範例：透過 Ollama 本地 API 以串流方式呼叫本地 LLM（預設 `qwen3.5:35b-a3b`），逐字輸出回應。 |
-| [`ollama_api_communication`](./ollama_api_communication) | 基於 Ollama `/api/chat` 的三層式對話系統（Infrastructure / Application / Data），Service 保持 Stateless，方便擴充為多使用者 Web 服務。 |
-| [`openclaw+discord`](./openclaw+discord) | Animal Shorts — AI 動物對決 YouTube Shorts 自動生成 Pipeline，結合 Kling AI 瀏覽器自動化生成影片，並透過 YouTube Data API v3 自動上傳。 |
+| [`ollama_deploy`](./ollama_deploy) | 最小化範例：透過 Ollama 進行單次對話以 API 呼叫本地 LLM。 |
+| [`ollama_api_communication`](./ollama_api_communication) | 進階範例：透過 Ollama 進行多輪對話的三層式對話系統，Service 保持 Stateless，可擴充為多使用者Web使用， API 使用 `/api/chat` 。 |
+| [`openclaw+discord`](./openclaw+discord) | 使用openclaw串接discord，透過對discord的文字輸入，進行腳本生成、影片產製、音效合成到 YouTube 上傳的完整四階段 Pipeline。 |
 
 ## 大方向
 
