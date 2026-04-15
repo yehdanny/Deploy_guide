@@ -6,16 +6,15 @@ def ask_stream(prompt):
     print(f"post target: {url}")
     print('-'*50)
     payload = {
-        "model": "qwen3.5:35b-a3b",              # ✅ 完整模型名稱
+        "model": "qwen3:4b-instruct",              # ✅ 完整模型名稱
         "prompt": prompt,
-        "stream": True
+        "stream": False
     }
-    with requests.post(url, json=payload, stream=True) as r:
-        for line in r.iter_lines():
-            if line:
-                data = json.loads(line)
-                if "response" in data:            # ✅ 防止 key 不存在報錯
-                    print(data["response"], end="", flush=True)
+
+    response = requests.post(url, json=payload)
+    response.raise_for_status()
+    result = response.json()
+    print(result.get("response"))
 
 if __name__ == "__main__":
-    ask_stream("解釋一下 Transformer")
+    ask_stream("用50字簡單解釋一下 Transformer")
