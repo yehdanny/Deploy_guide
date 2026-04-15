@@ -25,8 +25,8 @@ async def run():
     start_all = time.perf_counter()
 
     tasks = [fetch_generate(p, id) for id, p in enumerate(prompts)] #逐個併發
-    # print(f"[info] {task}")
-    results = await asyncio.gather(*tasks) #gather同時執行所有任務
+    print(f"[info] {tasks}")
+    results = await asyncio.gather(*tasks) #await調用才會讓gather同時執行所有任務
 
     print("\n--- 所有結果 ---")
     for i, res in enumerate(results):
