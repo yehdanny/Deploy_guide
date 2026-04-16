@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # 1. Redis 伺服器
+  redis-server:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+  # 2. FastAPI 入口
+  api-service:
+    build: .
+    # 8081是外部端口(本機)，8000是容器端口
+    ports:
+      - "8081:8000"
+    
+    depends_on:
+      - redis-server
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # 3. AI 處理工兵
+  worker-service:
+    build: .
+    # 這裡覆蓋 Dockerfile 的 CMD，改跑 worker.py
+    command: python app/worker.py
+    depends_on:
+      - redis-server
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

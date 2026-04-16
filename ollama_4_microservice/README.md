@@ -7,8 +7,9 @@
 ```python
 from fastapi import FastAPI
 import httpx
-
-app = FastAPI()
 ```
+
+使用docker build、docker run、curl 測試
+
 
 ---
