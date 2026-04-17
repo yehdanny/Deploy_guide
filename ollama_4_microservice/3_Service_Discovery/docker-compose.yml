@@ -1,0 +1,44 @@
+version: '3.8'
+
+networks:
+  ai-network:
+    driver: bridge
+
+services:
+  redis-server:
+    image: "redis:alpine"
+    networks:
+      - ai-network
+
+  # 新增 Audit 服務
+  audit-service:
+    build:
+      context: .
+      dockerfile: ./audit/Dockerfile
+    networks:
+      - ai-network
+    # 不需要對外暴露 ports，因為只有內部服務會呼叫它
+
+  api-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8000"
+    depends_on:
+      - redis-server
+      - audit-service
+    networks:
+      - ai-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  worker-service:
+    build: .
+    command: python app/worker.py
+    depends_on:
+      - redis-server
+    networks:
+      - ai-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
