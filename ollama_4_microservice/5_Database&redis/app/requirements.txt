@@ -1,0 +1,14 @@
+#api
+fastapi
+uvicorn
+httpx
+
+#redis
+redis
+
+#database
+sqlalchemy
+psycopg2-binary
+
+#env
+dotenv

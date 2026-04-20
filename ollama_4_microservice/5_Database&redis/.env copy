@@ -1,0 +1,5 @@
+POSTGRES_USER=my_secure_user
+POSTGRES_PASSWORD=my_secure_password
+POSTGRES_DB=ai_results
+DB_HOST=db
+DB_PORT=5432

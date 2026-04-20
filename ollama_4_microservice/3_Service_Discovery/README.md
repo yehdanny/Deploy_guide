@@ -1,3 +1,12 @@
+# 服務發現與通訊
+
+### 第三階段：服務發現與通訊 [Service Discovery and Communication](./STEP.md)
+
+- 使用AUDIT_SERVICE_URL = "http://audit-service:8000/log" 來進行服務發現
+    - 練習使用容器名稱進行通訊
+    - 練習使用斷路器(Circuit Breaker)來處理依賴服務失效
+
+
 ## 架構
 ```bash
 ollama-microservice/
