@@ -73,7 +73,7 @@ import httpx
 ### 第二階段：異步解耦 [Decoupling](C:\Users\ygz08\Work\Claude_vibe\place6\ollama_4_microservice\2_Message_Queue\STEP.md)
 這是微服務最關鍵的一環。AI 推論通常很慢，不應該讓使用者在 HTTP 請求上死等。
 
-引進消息隊列 (Message Queue)： 練習使用 Redis 或 RabbitMQ。
+引進消息隊列 (Message Queue)： 練習使用 Redis。
 
 流程： 1. 使用者發送請求到 API。
 2. API 將任務丟入 Redis 隊列後立即回傳「任務 ID」。
