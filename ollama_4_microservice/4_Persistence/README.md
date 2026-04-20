@@ -51,17 +51,19 @@
         answer = response.json().get("response", "error")
 
     ```
-# 目前進度
+# 完成
 
-目前在測試
-先確保只有 1 個 worker。
+## 完成這三個測試後，你就從「會寫 API」進階到「會設計分散式系統」了。學會了：
 
-連續發送 5 個請求。
+- ### Stateful API：透過 Redis 管理任務生命週期。
+    - waiting
+    - processing
+    - completed
+    - error
 
-觀察日誌，你會看到請求是一個接一個被處理。
+- ### Resilience：主動處理依賴服務失效。
+    - ```audit-service down```
+    - ```ollama down```
 
-執行：docker-compose up --scale worker-service=3 -d。
-
-再發送 5 個請求。
-https://chatgpt.com/c/69ddffe3-cd68-83e8-abb5-0add7f8e7dbf
-https://gemini.google.com/app/ecf53c87b27b02f0?hl=zh-TW
+- ### Elasticity：透過增加容器數量來對抗運算量。
+    - ```docker-compose up --scale worker-service=3 -d```
