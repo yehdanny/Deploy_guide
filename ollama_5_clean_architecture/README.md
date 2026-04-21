@@ -18,30 +18,40 @@
 ---
 
 ### 第一階段：定義領域核心 [Domain Layer](./1_Domain_Layer/README.md)
-**目標：定義「規則」，完全不寫任何實作邏輯。**
 
-在這個階段，你甚至不需要安裝 `requests` 或 `ollama` 套件，只需構想需求、儲存的狀態。
-* **實體 (Entities)**：定義資料模型。
-* **抽象介面 (Interfaces)**：定義 AI 服務應該具備什麼功能。
-* **成果**：
+<font color="orange">在這個階段，你甚至不需要安裝 `requests` 或 `ollama` 套件，只需構想需求、儲存的狀態。</font>
+
+- 不寫任何實作邏輯
+
+包含 :
     - 地基(models.py) : 會有一個Document和Summary。各自要包含什麼變數。
     - 藍圖(interfaces.py) : 會有一個summarize功能，輸入Document型別，輸出Summary型別。
 
-### 第二階段：實作業務邏輯 (Use Case Layer)
-**目標：編排流程 (Orchestration)。**
+---
 
-這一層負責協調第一階段定義的抽象介面。
-* **任務流**：例如「接收原文 -> 檢查字數 -> 格式化 Prompt -> 呼叫 AI 介面 -> 取得結果」。
-* **依賴注入 (DI)**：在初始化 Use Case 時傳入介面，而不是在內部實例化。
-* **成果**：一個可以獨立運作、易於單元測試 (Unit Test) 的邏輯單元。此時你可以用一個「假模型 (Mock)」來測試邏輯是否正確。
+### 第二階段：實作業務邏輯 [Use Case Layer](./2_UseCase_Layer/README.md)
+
+<font color="orange">寫一個流程，讓藍圖可以運作。</font>
+
+- 不寫任何實作邏輯
+
+包含 :
+    - 流程(use_cases/summarize_document.py) : 一個運行summarize的流程。
+
+---
 
 ### 第三階段：對接外部工具 (Infrastructure Layer)
-**目標：將 Ollama 真正接入系統。**
 
-這是在最外層的實作，處理所有與外部溝通的髒活。
-* **Ollama 轉接器 (Adapter)**：實作第一階段定義的介面。在這裡寫 `requests.post` 到 `localhost:11434` 或呼叫 `ollama` Python library。
+<font color="orange">將Ollama接入系統，並實作藍圖的介面。</font>
+
+- 有實作邏輯
+
+包含 :
+    - Ollama 轉接器 (Adapter)：實作第一階段定義的介面。在這裡寫 `requests.post` 到 `localhost:11434` 或呼叫 `ollama` Python library。
 * **錯誤處理**：處理模型超時、連線中斷或推論異常，並轉換為內層看得懂的錯誤類型。
 * **成果**：一個具備實際 AI 推論能力的模組。
+
+---
 
 ### 第四階段：多樣化進入點 (Interface Adapters / App Layer)
 **目標：展示架構的靈活性。**
