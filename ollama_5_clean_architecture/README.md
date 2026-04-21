@@ -11,25 +11,50 @@
 |最外層(4)| Infrastructure / Frameworks|這裡才是 Ollama 實作的地方。 負責發送請求給 localhost:11434。|
 
 ## 2. 實作流程
-1. 第一步：定義 Domain (Domain Layer)
-先不要管 Ollama。定義你的「翻譯任務」和「AI 服務介面」。
-第二步：撰寫 Use Case
-Use Case 只依賴於上面的介面，它不知道背後是 Ollama 還是 ChatGPT。
-第三步：實作 Infrastructure (Ollama)
-這時候才引入 Ollama 的實作。
+既然你目前專注在**技術研發與架構優化**，我建議將這個練習分為四個「由內而外」的階段。
 
-## 原因: 
+這樣的切分方式能讓你最直觀地感受 **Clean Architecture** 如何保護你的核心邏輯不受外部工具（如 Ollama 版本更新、API 變動）的影響。
 
-### 為什麼這樣練習有效？
-這份練習能讓你體會到三個關鍵好處：
+---
 
-- 可替換性：如果你明天想把 Ollama 換成 Qwen-2.5 或是 Llama-3，你只需要在 infrastructure 層寫一個新的 Class，完全不用動到 Use Case 裡的翻譯邏輯。
-- 易於測試：你可以寫一個 MockAIService 來測試 Use Case，而不需要真的啟動 Ollama 模型（省下推論時間與記憶體）。
-- 依賴反轉 (DIP)：Use Case 依賴的是抽象的 AIServiceInterface，而外層的 OllamaService 也要去符合內層定義的規則。
+### 第一階段：定義領域核心 [Domain Layer](./1_Domain_Layer/README.md)
+**目標：定義「規則」，完全不寫任何實作邏輯。**
 
-## 4. 進階練習建議
-當你完成基礎架構後，可以試著加入以下功能：
+在這個階段，你甚至不需要安裝 `requests` 或 `ollama` 套件，只需構想需求、儲存的狀態。
+* **實體 (Entities)**：定義資料模型。
+* **抽象介面 (Interfaces)**：定義 AI 服務應該具備什麼功能。
+* **成果**：
+    - 地基(models.py) : 會有一個Document和Summary。各自要包含什麼變數。
+    - 藍圖(interfaces.py) : 會有一個summarize功能，輸入Document型別，輸出Summary型別。
 
-- 加入 Repository 層：將翻譯過的紀錄存入 SQLite 或是 JSON 檔案。
-- 加入 Input Validation：在 Entity 層檢查輸入字串是否為空。
-- 更換進入點：分別寫一個 main.py (CLI 介面) 和一個 api.py (FastAPI 介面)，它們都呼叫同一個 TranslateTextUseCase。
+### 第二階段：實作業務邏輯 (Use Case Layer)
+**目標：編排流程 (Orchestration)。**
+
+這一層負責協調第一階段定義的抽象介面。
+* **任務流**：例如「接收原文 -> 檢查字數 -> 格式化 Prompt -> 呼叫 AI 介面 -> 取得結果」。
+* **依賴注入 (DI)**：在初始化 Use Case 時傳入介面，而不是在內部實例化。
+* **成果**：一個可以獨立運作、易於單元測試 (Unit Test) 的邏輯單元。此時你可以用一個「假模型 (Mock)」來測試邏輯是否正確。
+
+### 第三階段：對接外部工具 (Infrastructure Layer)
+**目標：將 Ollama 真正接入系統。**
+
+這是在最外層的實作，處理所有與外部溝通的髒活。
+* **Ollama 轉接器 (Adapter)**：實作第一階段定義的介面。在這裡寫 `requests.post` 到 `localhost:11434` 或呼叫 `ollama` Python library。
+* **錯誤處理**：處理模型超時、連線中斷或推論異常，並轉換為內層看得懂的錯誤類型。
+* **成果**：一個具備實際 AI 推論能力的模組。
+
+### 第四階段：多樣化進入點 (Interface Adapters / App Layer)
+**目標：展示架構的靈活性。**
+
+這是最有趣的一步。因為你的核心邏輯 (Use Case) 已經穩定了，你可以輕易地為它穿上不同的「衣服」。
+* **CLI 介面**：寫一個簡單的 `main.py`，透過終端機輸入文字。
+* **API 介面**：用 **FastAPI** 封裝成一個 Service，供前端呼叫。
+* **成果**：同一個 `TranslateUseCase` 同時驅動了 CLI 和 Web API，證明核心邏輯不需要為了不同的呈現方式而修改。
+
+---
+
+### 練習小叮嚀
+* **使用 `uv` 管理**：建議你可以開一個新專案，嘗試將這四個階段拆成不同的資料夾結構。
+* **觀察依賴方向**：隨時檢查你的 `import` 語句，確保只有「外層引用內層」，絕對沒有「內層引用外層」。
+
+這樣的階段劃分能讓你深刻體會到：即便未來你想把模型從本地的 Ollama 換成雲端的 API，你也只需要修改第三階段的內容，這就是架構優化的核心價值。
