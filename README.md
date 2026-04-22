@@ -30,7 +30,7 @@
 
 ## 三、大方向
 
-- **本地推理**：
+- **Software Engineering**：
     - `ollama_1_deploy` 為入門範例
         - [單次對話](./ollama_1_deploy/README.md)
     - `ollama_2_api_communication` 則是可擴充的對話服務骨架
@@ -51,7 +51,8 @@
         - [業務邏輯層 : 負責翻譯的邏輯流](./ollama_5_clean_architecture/2_UseCase_Layer/README.md)
         - [基礎設施層 : 實作藍圖的介面](./ollama_5_clean_architecture/3_Infrastructure_Layer/README.md)
         - [應用進入點 : 程式入口](./ollama_5_clean_architecture/4_App_Layer/README.md)
-
+- **Prompt Engineering**
+    - ollama_6_multistep_reasoning_prompt
         
 - **內容自動化**：`openclaw+discord` 展示從腳本生成、影片產製、音效合成到 YouTube 上傳的完整四階段 Pipeline。
 
