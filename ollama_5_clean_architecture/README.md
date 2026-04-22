@@ -40,31 +40,22 @@
 
 ---
 
-### 第三階段：對接外部工具 (Infrastructure Layer)
+### 第三階段：對接外部工具 [Infrastructure Layer](./3_Infrastructure_Layer/README.md)
 
 <font color="orange">將Ollama接入系統，並實作藍圖的介面。</font>
 
 - 有實作邏輯
-
-包含 :
-    - Ollama 轉接器 (Adapter)：實作第一階段定義的介面。在這裡寫 `requests.post` 到 `localhost:11434` 或呼叫 `ollama` Python library。
-* **錯誤處理**：處理模型超時、連線中斷或推論異常，並轉換為內層看得懂的錯誤類型。
-* **成果**：一個具備實際 AI 推論能力的模組。
-
+    - 用 工人+監工+執行 得到一個簡潔的可執行PIPELINE。
+    - 覆蓋藍圖的功能。
 ---
 
-### 第四階段：多樣化進入點 (Interface Adapters / App Layer)
-**目標：展示架構的靈活性。**
+### 第四階段：多樣化進入點 [App Layer](./4_APP_Layer/README.md)
 
-這是最有趣的一步。因為你的核心邏輯 (Use Case) 已經穩定了，你可以輕易地為它穿上不同的「衣服」。
-* **CLI 介面**：寫一個簡單的 `main.py`，透過終端機輸入文字。
-* **API 介面**：用 **FastAPI** 封裝成一個 Service，供前端呼叫。
-* **成果**：同一個 `TranslateUseCase` 同時驅動了 CLI 和 Web API，證明核心邏輯不需要為了不同的呈現方式而修改。
+<font color="orange">撰寫多個入口(CLI/FASTAPI)來驅動核心邏輯。</font>
+
+- 這是最有趣的一步。因為你的核心邏輯 (Use Case) 已經穩定了，你可以輕易地為它穿上不同的「衣服」。
+    - CLI 介面：寫一個簡單的 `main.py`，透過終端機輸入文字。
+    - API 介面：用 **FastAPI** 封裝成一個 Service，供前端呼叫。
+    - 成果：同一個 `TranslateUseCase` 同時驅動了 CLI 和 Web API，證明核心邏輯不需要為了不同的呈現方式而修改。
 
 ---
-
-### 練習小叮嚀
-* **使用 `uv` 管理**：建議你可以開一個新專案，嘗試將這四個階段拆成不同的資料夾結構。
-* **觀察依賴方向**：隨時檢查你的 `import` 語句，確保只有「外層引用內層」，絕對沒有「內層引用外層」。
-
-這樣的階段劃分能讓你深刻體會到：即便未來你想把模型從本地的 Ollama 換成雲端的 API，你也只需要修改第三階段的內容，這就是架構優化的核心價值。
