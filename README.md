@@ -5,10 +5,11 @@
 
 ### 本儲存庫記錄我 AI 的實作過程，技能依序為：
 
-- [deploy ollama](./ollama_1_deploy)
+- [ollama deploy](./ollama_1_deploy)
 - [ollama api communication](./ollama_2_api_communication)
 - [ollama async / concurrency](./ollama_3_async)
 - [ollama microservice](./ollama_4_microservice)
+- [ollama clean architecture](./ollama_5_clean_architecture)
 
 ---
 ### 興趣相關
@@ -24,6 +25,7 @@
 | [`ollama_2_api_communication`](./ollama_2_api_communication) | 進階範例：透過 Ollama 進行多輪對話的三層式對話系統，Service 保持 Stateless，可擴充為多使用者Web使用， API 使用 `/api/chat` 。 |
 | [`ollama_3_async`](./ollama_3_async) | 進階範例：透過```AsyncClient```套件進行多請求呼叫，包含:非同步+併發、串流、限流、超時保護。 |
 | [`ollama_4_microservice`](./ollama_4_microservice) | 分散式系統：分散運算壓力、時間依賴、故障風險，使用```redis + postgresql``` |
+| [`ollama_5_clean_architecture`](./ollama_5_clean_architecture) | 領域驅動設計：使用domain、usecase、infrastructure、app四層架構，形成型態定義、藍圖、實作、多應用。 |
 | [`openclaw+discord`](./openclaw+discord) | 使用`openclaw`串接`discord`，透過對discord的文字輸入，進行腳本生成、影片產製、音效合成到 YouTube 上傳的完整四階段 Pipeline。 |
 
 ## 三、大方向
@@ -44,6 +46,11 @@
         - [服務發現與通訊 : 內網通訊](./ollama_4_microservice/3_Service_Discovery/README.md)
         - [分散式系統 : 建立一個「強韌的 AI 影像/文字摘要流水線」](./ollama_4_microservice/4_Persistence/README.md)
         - [PostgreSQL 資料庫](./ollama_4_microservice/5_Database&redis/README.md)
+    - `ollama_5_clean_architecture` 職責分離
+        - [領域核心層 : 定義最基本的資料結構](./ollama_5_clean_architecture/1_Domain_Layer/README.md)
+        - [業務邏輯層 : 負責翻譯的邏輯流](./ollama_5_clean_architecture/2_UseCase_Layer/README.md)
+        - [基礎設施層 : 實作藍圖的介面](./ollama_5_clean_architecture/3_Infrastructure_Layer/README.md)
+        - [應用進入點 : 程式入口](./ollama_5_clean_architecture/4_App_Layer/README.md)
 
         
 - **內容自動化**：`openclaw+discord` 展示從腳本生成、影片產製、音效合成到 YouTube 上傳的完整四階段 Pipeline。
