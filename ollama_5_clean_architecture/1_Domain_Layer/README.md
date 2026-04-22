@@ -5,7 +5,8 @@
 2. interfaces內定義需要什麼功能(寫輸入輸出格式，具體實作不寫)
 
 ### 先寫起來後面用繼承方法實作(ex:OllamaSummarizer繼承AISummarizer)
-``python
+
+```python
 class OllamaSummarizer(AISummarizer):
     def __init__(self, model_name: str = "llama3"):
         ...init...
